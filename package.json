@@ -1,6 +1,6 @@
 {
     "name": "portfolio",
-    "homepage": "http://havelkao.github.io",
+    "homepage": "http://havelkao.github.io/portfolio",
     "version": "0.0.0",
     "scripts": {
         "dev": "vite",
