@@ -6,4 +6,4 @@ dist-ssr
 _*
 
 public/content/*
-anonymous-cli-metrics
+anonymous-cli-metrics.json
