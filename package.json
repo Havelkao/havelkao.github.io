@@ -3,14 +3,13 @@
     "homepage": "http://havelkao.github.io",
     "version": "0.0.0",
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --host",
         "build": "vite build",
         "serve": "vite preview",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist"
     },
     "dependencies": {
-        "@sanity/client": "^3.1.0",
         "marked": "^4.0.12",
         "vue": "^3.2.6",
         "vue-router": "^4.0.11",

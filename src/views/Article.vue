@@ -1,25 +1,25 @@
 <template>
-    <section v-if="article">
+    <article v-if="article" class="markdown-body">
         <h1 class="title">{{ article.title }}</h1>
         <h3 class="date">{{ formatDate(article.published) }}</h3>
         <div class="content" v-html="marked.parse(article.content)"></div>
-    </section>
+    </article>
     <NotFound v-else />
 </template>
 
 <script setup>
+import NotFound from "./NotFound.vue";
 import { onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 import { marked } from "marked";
-import NotFound from "./NotFound.vue";
 
 const articleName = useRoute().params.article;
 const store = useStore();
 const article = store.state.articles.find((article) => article.name === articleName);
 
 onMounted(() => {
-    if (article) {
+    if (article && article.content === "") {
         store.dispatch("getArticle", `/blog/${article.filename}`);
     }
 });
@@ -35,7 +35,6 @@ function formatDate(str) {
 .title {
     font-size: 2.3rem;
     margin: 0;
-    margin-bottom: 0.75rem;
 }
 
 .date {

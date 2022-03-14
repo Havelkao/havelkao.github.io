@@ -49,7 +49,7 @@ footer {
 }
 
 #smiley {
-    transform: translateY(-1.2px)
+    /* transform: translateY(-1.2px) */
     
 }
 </style>

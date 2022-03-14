@@ -1,7 +1,7 @@
 <template>
     <nav>
         <router-link to="/"> home </router-link>
-        <router-link to="/blog" :class="{ 'active-blog': currentRoute.startsWith('/blog') }"> blog </router-link>
+        <router-link to="/blog"> blog </router-link>
         <router-link to="/portfolio"> portfolio </router-link>
     </nav>
 </template>
@@ -32,7 +32,6 @@ a {
 a:hover {
     text-decoration: underline;
 }
-.active-blog,
 .router-link-active {
     text-decoration: underline;
     color: var(--color-tertiary);

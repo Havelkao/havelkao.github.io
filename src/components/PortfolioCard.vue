@@ -1,13 +1,17 @@
 <template>
     <div class="card">
         <div class="card-image">
-            <img :src="imageURL" :alt="image" />
-            <a :href="link" target="blank" class="card-title">{{ title }}</a>
+            <a a :href="link" target="blank">
+                <img :src="imageURL" :alt="image" />
+                <div class="card-title">{{ title }}</div>
+            </a>
         </div>
         <div class="card-content-wrapper">
             <div class="card-content">
                 <div class="card-description">{{ description }}</div>
-                <div v-html="tags.map((t) => `<span style='color:${colorMap[t]}'>#${t}</span>`).join(' ')"></div>
+                <div class="card-tags">
+                    <div v-for="tag in tags" :key="tag" :style="`color: ${colorMap[tag]}`">#{{ tag }}</div>
+                </div>
             </div>
             <a :href="link" target="blank" class="card-action"><span>VIEW</span><span class="arrow">&#8594;</span></a>
         </div>
@@ -45,15 +49,17 @@ const colorMap = {
     display: inline-block;
     position: relative;
     break-inside: avoid;
-    margin-bottom: 2rem;
+    margin-bottom: var(--column-gap);
     border-radius: 10px;
     border-bottom: 5px solid rgb(0 0 0 / 14%);
     border-right: 4px solid rgb(0 0 0 / 14%);
     border-left: 1px solid rgb(0 0 0 / 14%);
 }
 
-.card:hover > .card-image > img {
-    transform: scale(1.05);
+.card:hover > .card-image > a > img {
+    backface-visibility: hidden;
+    width: 105%;
+    height: 105%;
 }
 
 .card-image {
@@ -65,8 +71,8 @@ img {
     display: block;
     border-radius: 10px 10px 0 0;
     width: 100%;
-    max-height: 16rem;
-    min-height: 16rem;
+    max-height: 14rem;
+    min-height: 14rem;
     object-fit: cover;
     position: relative;
     transition: all 0.2s ease-in-out;
@@ -86,7 +92,7 @@ img {
     background-color: rgba(32, 33, 36, 0.85);
 }
 
-.card:hover > .card-image > .card-title {
+.card:hover > .card-image > a > .card-title {
     color: var(--color-tertiary);
 }
 
@@ -101,11 +107,18 @@ img {
     grid-gap: 0.5rem;
     color: var(--color-secondary);
 }
+
+.card-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .card-action {
     letter-spacing: 0.1em;
     color: var(--color-tertiary);
     font-weight: 600;
 }
+
 .card:hover > .card-content-wrapper > .card-action > .arrow {
     visibility: visible;
 }

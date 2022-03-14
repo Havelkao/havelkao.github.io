@@ -21,14 +21,15 @@ import { useStore } from "vuex";
 const projects = useStore().state.projects;
 </script>
 
+<style>
+:root {
+    --column-gap: 1rem;
+}
+</style>
+
 <style scoped>
 section {
-    column-width: 13rem;
-    column-gap: 2rem;
-}
-
-.tags {
-    display: flex;
-    gap: 1rem;
+    column-width: 15rem;
+    column-gap: var(--column-gap);
 }
 </style>

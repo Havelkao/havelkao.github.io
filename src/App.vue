@@ -28,7 +28,7 @@ onMounted(() => {
 <style>
 #app {
     margin: auto;
-    padding: 0 2rem 0 1rem;
+    padding: 0 1.5rem 0 1rem;
     max-width: 42rem;
     min-height: 100vh;
     display: grid;
