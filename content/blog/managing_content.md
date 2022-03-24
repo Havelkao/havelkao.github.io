@@ -37,7 +37,7 @@ Much cool, very text formatted code block. So how does it work? If it wasn't obv
 ```js
 function getURL() {
     let url = "/content";
-    if (location.hostname === "https://havelkao.github.io") {
+    if (location.hostname === "havelkao.github.io") {
         url = "https://havelkao.github.io/portfolio-content";
     }
     return url;
