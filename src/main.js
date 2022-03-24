@@ -4,6 +4,7 @@ import store from "./store.js";
 import App from "./App.vue";
 import "./styles/global.css";
 import "./styles/markdown.css";
+import "highlight.js/styles/vs2015.css";
 
 const app = createApp(App);
 app.use(router);

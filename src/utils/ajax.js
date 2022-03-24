@@ -1,9 +1,9 @@
 import { addArticleName } from "./content";
 
 export function getURL() {
-    let url = "https://havelkao.github.io/portfolio-content";
-    if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
-        url = "/content";
+    let url = "/content";
+    if (location.hostname === "https://havelkao.github.io") {
+        url = "https://havelkao.github.io/portfolio-content";
     }
     return url;
 }

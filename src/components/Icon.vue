@@ -1,5 +1,5 @@
 <template>
-    <a :href="href" target="blank">
+    <a :href="href" target="_blank">
         <svg :width="size" :height="size">
             <defs>
                 <mask :id="mask" x="0" y="0" :width="size" :height="size">

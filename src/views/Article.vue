@@ -12,15 +12,16 @@ import NotFound from "./NotFound.vue";
 import { onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
-import { marked } from "marked";
+import { marked } from '../utils/marked'
+
 
 const articleName = useRoute().params.article;
 const store = useStore();
 const article = store.state.articles.find((article) => article.name === articleName);
 
-onMounted(() => {
+onMounted(async () => {
     if (article && article.content === "") {
-        store.dispatch("getArticle", `/blog/${article.filename}`);
+        await store.dispatch("getArticle", `/blog/${article.filename}`);
     }
 });
 
@@ -35,6 +36,7 @@ function formatDate(str) {
 .title {
     font-size: 2.3rem;
     margin: 0;
+    padding: 0;
 }
 
 .date {

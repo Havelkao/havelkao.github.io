@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import { getContent, getArticles, getProjects } from "./utils/ajax";
+import { getLast } from "./utils/array";
 
 const store = createStore({
     state: {
@@ -36,8 +37,7 @@ const store = createStore({
         getArticle({ commit }, path) {
             getContent(path).then(
                 (data) => {
-                    const filename = path.split("/").at(-1);
-                    console.log(filename);
+                    const filename = getLast(path.split("/"));
                     commit("addContent", { value: data, filename });
                 },
                 (error) => Promise.reject(error)
