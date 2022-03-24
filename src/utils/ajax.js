@@ -2,7 +2,7 @@ import { addArticleName } from "./content";
 
 export function getURL() {
     let url = "/content";
-    if (location.hostname === "https://havelkao.github.io") {
+    if (location.hostname === "havelkao.github.io") {
         url = "https://havelkao.github.io/portfolio-content";
     }
     return url;
