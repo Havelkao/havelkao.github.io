@@ -19,9 +19,9 @@ const articleName = useRoute().params.article;
 const store = useStore();
 const article = store.state.articles.find((article) => article.name === articleName);
 
-onMounted(async () => {
+onMounted(() => {
     if (article && article.content === "") {
-        await store.dispatch("getArticle", `/blog/${article.filename}`);
+        store.dispatch("getArticle", `/blog/${article.filename}`);
     }
 });
 

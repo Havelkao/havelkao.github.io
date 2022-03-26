@@ -2,6 +2,7 @@
     --background-color: rgba(32, 33, 36, 1);
     --color-primary: rgb(236, 236, 236);
     --color-secondary: #acafb5;
+    --color-secondary-50: #97999d;
     --color-secondary-100: #4d4d50;
     --color-secondary-200: #2c2c31;
     --color-secondary-300: #242427;
@@ -33,10 +34,4 @@ a {
 
 p {
     margin-top: 0;
-}
-
-pre,
-code {
-    white-space: pre-wrap !important;
-    overflow-x: scroll;
 }
