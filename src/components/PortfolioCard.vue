@@ -54,6 +54,7 @@ const colorMap = {
     border-bottom: 5px solid rgb(0 0 0 / 14%);
     border-right: 4px solid rgb(0 0 0 / 14%);
     border-left: 1px solid rgb(0 0 0 / 14%);
+    width: 100%;
 }
 
 .card:hover > .card-image > a > img {
