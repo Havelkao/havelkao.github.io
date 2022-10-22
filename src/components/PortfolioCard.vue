@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-image">
             <a a :href="link" target="blank">
-                <img :src="imageURL" :alt="image" />
+                <img :src="imageURL" :alt="image" rel="preload" />
                 <div class="card-title">{{ title }}</div>
             </a>
         </div>
@@ -112,6 +112,7 @@ img {
 .card-tags {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .card-action {
